@@ -1,7 +1,7 @@
 			<nav>
 	    		<ul>
-	        		<li><a href="/"{% if page.url == "/" %}style="color: red;"{% endif %}>Home</a></li>
-		        	<li><a href="/about"{% if page.url == "/about.html" %}style="color: red;"{% endif %}>About</a></li>
-	        		<li><a href="/blog"{% if page.url == "/blog.html" %}style="color: red;"{% endif %}>Blog</a></li>
+	    		{% for item in site.data.navigation %}
+	        		<li><a href="{{item.link}}" {% if page.url == item.link %} class="current" {% endif %}> {{ item.name }} </a></li> 
+       			{% endfor %}
 	    		</ul>
 			</nav>
